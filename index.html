@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Testando JWT</title>
+</head>
+<body  style="margin-left: 20%; margin-right: 20%;">
+    <header>
+        <h1>Autenticação e refresh token com jwt</h1>
+    </header>
+
+    <main>
+        <h4>Login</h4>
+        <div style="display: flex">
+            <form id="form">
+                <input type="text" name="email" value="felipe@email.com">
+                <input type="password" name="password" value="123456">
+                <button type="submit" style="margin-right:4px;">Login</button>
+            </form>
+            <button id="logoff" type="button" style="display: none">Logoff</button>
+        </div>
+        <h4>Após autenticado</h4>
+        <button id="btn_check_auth">Verificar autenticação</button>
+    
+        <div id="auth-div" style="display: none">
+            <h4>Recurso para usuário autenticado</h4>
+            <button id="resource">Recurso</button>
+        </div>
+        
+        <div>
+            
+        </div>
+    </main>
+    
+    
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="./assets/js/index.js"></script>
+</html>

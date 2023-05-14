@@ -1,0 +1,18 @@
+{
+    "name": "felipe/php",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Felipe Figueiredo",
+            "email": "felipefigueiredosal@gmail.com"
+        }
+    ],
+    "require": {
+        "firebase/php-jwt": "^6.4",
+        "vlucas/phpdotenv": "^5.5"
+    }
+}

@@ -1,0 +1,42 @@
+version: '3.9'
+
+services:
+  nginx:
+    container_name: nginx
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile
+    ports:
+      - 80:80
+    volumes:
+      - .:/var/www/html
+    depends_on:
+      - php-fpm
+    networks:
+      - my-app-network
+
+  php-fpm:
+    container_name: php-fpm
+    build:
+      context: ./php
+      dockerfile: Dockerfile
+    volumes:
+      - .:/var/www/html
+    networks:
+      - my-app-network
+
+  postgres:
+    container_name: postgres
+    build:
+      context: ./postgres
+      dockerfile: Dockerfile
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_PASSWORD=123456
+      - POSTGRES_DB=teste
+    networks:
+      - my-app-network
+networks:
+  my-app-network:
+    external: true
